@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div id="header">
-      <app-header-component></app-header-component>
+      <app-header-component (tabSelected)="onSelectTab($event)"></app-header-component>
     </div>
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="showRecipes"></app-recipes>
+      <app-shopping-list *ngIf="!showRecipes"></app-shopping-list>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-header-component',
@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 
 export class HeaderComponent {
     collapsed = true;
-    constructor() {
+    @Output() tabSelected = new EventEmitter<number>();
+    constructor() {}
 
+    selectTab(number) {
+      this.tabSelected.emit(number);
     }
 }

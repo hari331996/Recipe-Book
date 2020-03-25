@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Food Shopping App';
+  showRecipes = true;
+
+  onSelectTab(selectedTab) {
+    this.showRecipes = (selectedTab==0) ? true : false;
+  }
 }

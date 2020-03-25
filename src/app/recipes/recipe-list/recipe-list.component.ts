@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../../recipes/recipe.model';
 
 @Component({
@@ -13,9 +13,13 @@ export class RecipeListComponent implements OnInit {
     new Recipe('Pasta', 'A type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.', '../../../assets/pasta.jpg'),
     new Recipe('Noodles', 'A type of food made from unleavened dough which is rolled flat and cut, stretched or extruded, into long strips or strings.', '../../../assets/manchurian.jpg')
   ];
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onRecipeSelect(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 }
