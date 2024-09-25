@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-import { Ingredient } from 'src/app/shared/Ingredient.model';
+import { Ingredient } from '../../shared/ingredient.model';
 import { isNgTemplate } from '@angular/compiler';
 
 @Component({
